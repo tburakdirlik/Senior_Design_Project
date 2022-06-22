@@ -10,9 +10,10 @@
 <p align="center">
   <img src="https://raw.githubusercontent.com/tburakdirlik/Senior_Design_Project/main/settings%20and%20project%20structure/3.png?token=GHSAT0AAAAAABV3VGDM26LNK2K66BWQOAOMYVTLK6A" />
 </p>
-
+```bash
 User: postgres
 Password: example
+```
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/tburakdirlik/Senior_Design_Project/main/settings%20and%20project%20structure/4.png?token=GHSAT0AAAAAABV3VGDNSUIIT6L4MFGRMRZEYVTLLJA" />
