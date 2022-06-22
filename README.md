@@ -1,4 +1,4 @@
-# Senior_Design_Project
+# Senior Design E-commerce Project
 
 
 <p align="center">
