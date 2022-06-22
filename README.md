@@ -12,10 +12,12 @@
 </p>
 
 ```
+For database creation above
 
 User: postgres
-
 Password: example
+
+Click --> Test connection --> Apply 
 
 ```
 
