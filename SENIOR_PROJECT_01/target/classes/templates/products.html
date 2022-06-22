@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+          integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light" >
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+            <img th:src="@{/images/logo.png}"  src="../static/images/logo.png" width="auto" height="40" class="d-inline-block align-top" alt=""/>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto"></ul>
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" th:href="@{/admin}" href="#">admin-home</a>
+                </li>
+
+                <li class="nav-item active">
+                    <a class="nav-link" th:href="@{/shop}" href="#">shop</a>
+                </li>
+
+                <li class="nav-item active">
+                    <a class="nav-link" th:href="@{/logout}" href="#">logout</a>
+                </li>
+
+            </ul>
+
+        </div>
+    </div>
+</nav>
+<div class="container">
+
+    <a th:href="@{/admin/products/add}" style="margin: 20px 0" class="btn btn-primary">Add Product</a>
+    <table class="table">
+        <thead class="thead-light">
+        <tr>
+            <th scope="col">Count</th>
+            <th scope="col">Product Name</th>
+            <th scope="col">Description</th>
+            <th scope="col">Image Url</th>
+            <th scope="col">Preview</th>
+            <th scope="col">Price</th>
+            <th scope="col">Delete</th>
+            <th scope="col">Update</th>
+        </tr>
+        </thead>
+        <tbody>
+
+        <tr th:each="product, iStat : ${products}">
+            <th scope="row" th:text="${iStat.index + 1}">1</th>
+            <td th:text="${product.name}"></td>
+            <td th:text="${product.description}"></td>
+            <td th:text="${product.imageUrl}"></td>
+            <td>
+                <img class="" height="50px" width="50px" th:src="@{${ product.imageUrl}}" >
+            </td>
+            <td th:text="${product.price}"></td>
+
+
+
+            <td><a href="" th:href="@{/admin/products/delete/{id}(id=${product.productId})}" class="btn btn-danger">Delete</a></td>
+            <td><a href="" th:href="@{/admin/products/update/{id}(id=${product.productId})}" class="btn btn-warning">Update</a></td>
+
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+
+
+</body>
+</html>
